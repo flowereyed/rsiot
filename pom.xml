@@ -20,6 +20,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>google-cloud-logging-logback</artifactId>
+            <version>0.120.0-alpha</version>
+        </dependency>
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
