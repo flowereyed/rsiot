@@ -10,7 +10,7 @@ public class RecordEvent {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private Long pupilId;
+    private String pupilEmail;
     private LocalDateTime dateTime;
 
     @Enumerated(EnumType.STRING)
@@ -18,13 +18,8 @@ public class RecordEvent {
 
     private String subject;
 
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
+    @Enumerated(EnumType.STRING)
+    private EventStatus eventStatus;
 
     public Long getId() {
         return id;
@@ -34,12 +29,12 @@ public class RecordEvent {
         this.id = id;
     }
 
-    public Long getPupilId() {
-        return pupilId;
+    public String getPupilEmail() {
+        return pupilEmail;
     }
 
-    public void setPupilId(Long pupilId) {
-        this.pupilId = pupilId;
+    public void setPupilEmail(String pupilEmail) {
+        this.pupilEmail = pupilEmail;
     }
 
     public LocalDateTime getDateTime() {
@@ -56,5 +51,21 @@ public class RecordEvent {
 
     public void setStatus(ExamStatus status) {
         this.status = status;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public EventStatus getEventStatus() {
+        return eventStatus;
+    }
+
+    public void setEventStatus(EventStatus eventStatus) {
+        this.eventStatus = eventStatus;
     }
 }

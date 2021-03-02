@@ -74,9 +74,10 @@ public class JournalService {
 
         if (record.getExamMark()){
             RecordEvent event = new RecordEvent();
-            event.setPupilId(journal.getPupil().getId());
+            event.setPupilEmail(journal.getPupil().getEmail());
             event.setDateTime(record.getDateTime());
             event.setSubject(record.getSubject());
+            event.setEventStatus(EventStatus.IN_PROGRESS);
 
             if (record.getMark().getValue() >= Mark.FOUR.getValue()){
                 event.setStatus(ExamStatus.SUCCESS);
